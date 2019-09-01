@@ -17,7 +17,7 @@ tags:
 
 mRNA display is a very elegant technique which occasionally enabled the discovery of functional short-peptides. Those discoveries have inspired a lot of optimism in drug industry and research and brought billions-worth of funding to the field.  To date, however, the mechanism of this technique remains vaguely understood, which often leads to dubious experimental designs followed by biased interpretations of results.
 
-Recent improvement of sequencing techniques allowed to take detailed 'snapshots' of mRNA-display system at every cycle of the evolution. Understandably, new types of data require new methods of analysis. Hear I provide a novel method of [analysis of mRNA-display results][mrna-display], based on basic graph theory and implemented in [python][python] using [NetworkX][networkx] library.
+Recent improvement of sequencing techniques allowed to take detailed 'snapshots' of mRNA-display at every cycle. Understandably, new types of data require new methods of analysis. Hear I provide a novel method of [analysis of mRNA-display results][mrna-display], based on basic graph theory and implemented in [python][python] using [NetworkX][networkx] library.
 
 For experimental data I rely on [mRNA display][mrna-display-data], against biotin-tagged human recombinant PHD2, I performed according to the previously published [protocol][hayashi-ref] with minor modifications. Regrettably so, the results of this research are yet to see the light.
 
