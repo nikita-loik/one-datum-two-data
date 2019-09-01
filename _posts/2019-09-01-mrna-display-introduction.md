@@ -4,8 +4,8 @@ date: 2019-09-01T00:00:00-00:00
 categories:
   - blog
 toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
+toc_label: "Table of Contents"
+toc_icon: "th-list"
 tags:
   - mRNA display
   - drug discovery
