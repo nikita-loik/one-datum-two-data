@@ -20,7 +20,7 @@ Hear I provide a novel method of [analysis of mRNA-display results][mrna-display
 
 As an experimental case for analysis I rely on my mRNA display, against biotin-tagged human recombinant PHD2, performed by me according to the previously published [protocol][hayashi-ref] with minor modifications.
 
-Regretably so, the results of this research are yet to see the light.
+Regrettably so, the results of this research are yet to see the light.
 
 [mrna-display]: https://github.com/nikita-loik/mrna-display
 [python]:       https://www.python.org/
