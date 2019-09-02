@@ -32,7 +32,7 @@ The process is repeated several times. In the result some ligands may be amplifi
 
 Indeed, as a result of successful mRNA display it may be possible to find some ligands which bind well to the target. Nevertheless, such simplistic approach fails to explain, why in some cases after multiple cycles of mRNA display the most amplified ligand has weaker binding properties than some much less amplified ligands.
 
-![result of successful mRNA display][mrna-display-results-by-cycle]
+![result of successful mRNA display](/assets/images/mrna_display_results_by_cycle.png)
 
 
 
@@ -48,4 +48,4 @@ Indeed, as a result of successful mRNA display it may be possible to find some l
 [mrna-display-data]: https://github.com/nikita-loik/mrna-display/tree/master/sample_input
 [hayashi-ref]: https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201108118
 
-[mrna-display-results-by-cycle]: /assets/images/mrna_display_results_by_cycle.png
+<!-- [mrna-display-results-by-cycle]: /assets/images/mrna_display_results_by_cycle.png -->
