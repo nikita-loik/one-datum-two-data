@@ -19,7 +19,7 @@ tags:
 
 Recent improvement of sequencing techniques allowed to take detailed 'snapshots' of mRNA-display at every cycle. Understandably, new types of data require new methods of analysis. Hear I provide a novel method of [analysis of mRNA-display results][mrna-display], based on basic graph theory and implemented in [python][python] using [NetworkX][networkx] library.
 
-For experimental data I rely on [mRNA display][mrna-display-data], against biotin-tagged human recombinant PHD2, I performed according to the previously published [protocol][hayashi-ref] with minor modifications. Regrettably so, the results of this research are yet to see the light.
+For experimental data I rely on a successful [mRNA display][mrna-display-data], against biotin-tagged human recombinant PHD2, I performed according to the previously published [protocol][hayashi-ref] with minor modifications. Regrettably so, the results of this research are yet to see the light.
 
 # Background
 ## Bio-Chemistry of mRNA Display
@@ -31,6 +31,9 @@ mRNA display is based on the 'survival of the fittest' algorithm. Beginning with
 The process is repeated several times. In the result some ligands may be amplified to a much higher rate than the other, and such ligands are considered to have a better binding properties.
 
 Indeed, as a result of successful mRNA display it may be possible to find some ligands which bind well to the target. Nevertheless, such simplistic approach fails to explain, why in some cases after multiple cycles of mRNA display the most amplified ligand has weaker binding properties than some much less amplified ligands.
+
+![result of successful mRNA display][mrna-display-results-by-cycle]
+
 
 
 
@@ -45,3 +48,4 @@ Indeed, as a result of successful mRNA display it may be possible to find some l
 [mrna-display-data]: https://github.com/nikita-loik/mrna-display/tree/master/sample_input
 [hayashi-ref]: https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201108118
 
+[mrna-display-results-by-cycle]: https://github.com/nikita-loik/one-datum-two-data/blob/gh-pages/assets/images/mrna_display_results_by_cycle.png
