@@ -48,4 +48,4 @@ Indeed, as a result of successful mRNA display it may be possible to find some l
 [mrna-display-data]: https://github.com/nikita-loik/mrna-display/tree/master/sample_input
 [hayashi-ref]: https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201108118
 
-[mrna-display-results-by-cycle]: https://github.com/nikita-loik/one-datum-two-data/blob/gh-pages/assets/images/mrna_display_results_by_cycle.png
+[mrna-display-results-by-cycle]: /assets/images/mrna_display_results_by_cycle.png
