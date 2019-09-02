@@ -34,9 +34,10 @@ Indeed, as a result of successful mRNA display it may be possible to find some l
 
 ![result of successful mRNA display](/assets/images/mrna_display_results_by_cycle.png){:height="1080px" width="1440px"}
 
-{% figure caption:"Cross your face and then you're done." %}
-![result of successful mRNA display](/assets/images/mrna_display_results_by_cycle.png)
-{% endfigure %}
+<figure class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/mrna_display_results_by_cycle.png" alt="">
+  <figcaption>Look at 580 x 300 getting some love.</figcaption>
+</figure>
 
 
 
