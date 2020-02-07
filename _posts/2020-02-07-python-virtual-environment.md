@@ -82,11 +82,6 @@ venv_remove:
     rm -rf $(VENV_NAME)
     @echo "===removing virtual iPython kernel==="
     rm -rf ~/Library/Jupyter/kernels/$(KERNEL_NAME)
-
-# Data: JM Dictionary, JE dictionary, Kanji & Radicals, Kanji SVG, Kanji Dictionary, Examples.
-.PHONY: data
-data:
-    scripts_shell/get_data.sh
 ```
 
 [hitchhikers-guide-virtual-environments]: https://docs.python-guide.org/dev/virtualenvs/
