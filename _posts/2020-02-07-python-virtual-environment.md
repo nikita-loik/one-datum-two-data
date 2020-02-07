@@ -19,6 +19,8 @@ To simplify this tedious task a simple shell script combined with [makefile][exh
 
 ## Shell Script
 
+Create a shell script `SCRIPT_PATH`.
+
 ```shell
 #!/bin/zsh
 # 1. Get virtual environment name.
@@ -60,10 +62,10 @@ git commit -m "Update .gitignore with '.${venv_name}/'"
 echo "===added & committed .gitignore to git==="
 ```
 
-**NB!** To make script executable it may be necessary to change the [mode of the file][chmod-tutorial]:
+**NB!** To make script executable, it may be necessary to change the [mode of the file][chmod-tutorial]:
 
 ```bash
-chmod 777 FILE_PATH
+chmod 777 SCRIPT_PATH
 ```
 
 ## Makefile
@@ -75,7 +77,7 @@ VENV_NAME := $(wildcard .venv_*)
 # 2. Get kernel name from virtual-environment name (substitute '.' for '').
 KERNEL_NAME := $(subst .,,$(VENV_NAME))
 venv_get:
-    scripts_shell/get_venv.sh
+    SCRIPT_PATH
 
 venv_remove:
     @echo "===removing virtual environment==="
