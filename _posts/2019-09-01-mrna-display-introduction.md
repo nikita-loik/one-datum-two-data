@@ -35,9 +35,27 @@ The process is repeated several times. In the result some ligands may be amplifi
 
 Indeed, as a result of successful mRNA display it may be possible to find some ligands which bind well to the target. Nevertheless, such simplistic approach fails to explain, why in some cases after multiple cycles of mRNA display the most amplified ligand has weaker binding properties than some much less amplified ligands.
 
-### Probability
+### Bayesian Approach
 
 #### Priors
+
+##### Selection Library
+
+* random peptide region was 8-12 amino-acids long
+* for peptide-encoding region NNK library was used (where N = A/C/G/T; and K = G/T, total 32 codons)
+
+Thus, the original library diversity is between 10^12 to 10^18 (~1 pmol to ~1 µmol).
+
+* original library amount
+* the library was amplified using 5 cycles of PCR (i.e. )
+* library amount used for selection
+
+##### Selection Process
+
+* target amount ~10^-6 M
+* ligand concentration ~10-6 M
+
+
 
 #### Likelyhood
 

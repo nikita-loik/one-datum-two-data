@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-05T10:21:25+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">One Datum — Two Data</title><subtitle>An amazing website.</subtitle><author><name>Nikita Loik</name></author><entry><title type="html">Create Python Virtual Environment Using Shell Script and Makefile</title><link href="http://localhost:4000/blog/python-virtual-environment/" rel="alternate" type="text/html" title="Create Python Virtual Environment Using Shell Script and Makefile" /><published>2020-02-07T01:00:00+01:00</published><updated>2020-02-07T01:00:00+01:00</updated><id>http://localhost:4000/blog/python-virtual-environment</id><content type="html" xml:base="http://localhost:4000/blog/python-virtual-environment/">&lt;p&gt;While very effective as a tool, it can be fairly laborious to create &lt;a href=&quot;https://docs.python-guide.org/dev/virtualenvs/&quot;&gt;python virtual environment&lt;/a&gt; for every project on every computer.&lt;/p&gt;
+
+&lt;p&gt;To simplify this tedious task a simple shell script combined with &lt;a href=&quot;https://www.gnu.org/software/make/manual/make.html&quot;&gt;makefile&lt;/a&gt; can be used.&lt;/p&gt;
+
+&lt;h2 id=&quot;shell-script&quot;&gt;Shell Script&lt;/h2&gt;
+
+&lt;p&gt;Create a shell script &lt;code class=&quot;highlighter-rouge&quot;&gt;SCRIPT_PATH&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/zsh&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 1. Get virtual environment name.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 1.1. Get working directory name (without full path).&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;dir_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;##*/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 1.2. Replace '-' with '_' in a name.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;venv_stem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;dir_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;//-/_&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 1.3. Get virtual environment name.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;venv_&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_stem&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;===creating virtual environment &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;===&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 2. Create virtual environment.&lt;/span&gt;
+virtualenv &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; python3 &lt;span class=&quot;s2&quot;&gt;&quot;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 3. Activate virtual environment.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/bin/activate&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 4. Install jupyter.&lt;/span&gt;
+pip install jupyter
+
+&lt;span class=&quot;c&quot;&gt;# 5. Install IPython kernel.&lt;/span&gt;
+python &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; ipykernel install &lt;span class=&quot;nt&quot;&gt;--user&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 6. Install requirements.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 6.1. Make an empty file requirements.txt if doesn't exist.&lt;/span&gt;
+touch requirements.txt
+&lt;span class=&quot;c&quot;&gt;# 6.2. Install requirements.&lt;/span&gt;
+pip install &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;===virtual environment .&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; created===&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 7. If doesn't exist, add virtual environment path to .gitignore.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-qxF&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&quot;&lt;/span&gt; .gitignore &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; .gitignore
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;===updated .gitignore with &quot;&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;s2&quot;&gt;&quot;===&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 8. Add and commit .gitignore to git.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# NB Will report 'no changes added to commit' if .gitignore stayed the same.&lt;/span&gt;
+git add .gitignore
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Update .gitignore with '.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;venv_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/'&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;===added &amp;amp; committed .gitignore to git===&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;NB!&lt;/strong&gt; To make script executable, it may be necessary to change the &lt;a href=&quot;https://catcode.com/teachmod/&quot;&gt;mode of the file&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod 777 SCRIPT_PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;makefile&quot;&gt;Makefile&lt;/h2&gt;
+
+&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Virtual environment.
+# 1. Get virtual environment name.
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;VENV_NAME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;wildcard .venv_&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 2. Get kernel name from virtual-environment name (substitute '.' for '').
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;KERNEL_NAME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;subst .,,&lt;span class=&quot;nv&quot;&gt;$(VENV_NAME)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;venv_get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;SCRIPT_PATH&lt;/span&gt;
+
+&lt;span class=&quot;nl&quot;&gt;venv_remove&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;@echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;===removing virtual environment===&quot;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;-rf&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$(VENV_NAME)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;@echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;===removing virtual iPython kernel===&quot;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;-rf&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;~/Library/Jupyter/kernels/$(KERNEL_NAME)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Nikita Loik</name></author><category term="shell script" /><category term="virtual environment" /><category term="python" /><category term="makefile" /><summary type="html">While very effective as a tool, it can be fairly laborious to create python virtual environment for every project on every computer.</summary></entry><entry><title type="html">Route Inspection</title><link href="http://localhost:4000/blog/route-inspection/" rel="alternate" type="text/html" title="Route Inspection" /><published>2019-09-08T02:00:00+02:00</published><updated>2019-09-08T02:00:00+02:00</updated><id>http://localhost:4000/blog/route-inspection</id><content type="html" xml:base="http://localhost:4000/blog/route-inspection/">&lt;h2 id=&quot;0-very-brief-introduction&quot;&gt;0. Very Brief Introduction&lt;/h2&gt;
+
+&lt;p&gt;In route inspection, I will try to address two classical invert problems — &lt;a href=&quot;https://en.wikipedia.org/wiki/Route_inspection_problem&quot;&gt;Chinese-Postman Problem (CPP)&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Travelling_salesman_problem&quot;&gt;Travelling-Salesman Problem (TSP)&lt;/a&gt;. In CPP the task is to create a route along all the roads in some area, such that it covers each road exactly once. In TSP one has to create a route to get to all the cities within some area, in such way that travelling is minimum. Both problems are considered &lt;a href=&quot;https://en.wikipedia.org/wiki/NP-hardness&quot;&gt;NP-hard problems&lt;/a&gt;. In reality, people are satisfied with some suboptimal solutions — travel along all the roads (possibly more than once), but try to minimise the extra travelling. Those solutions cost money. To the best of my knowledge, one such solution offers a custom-made app at approximately €50 000 per year; another offers a route generation for as little as €400 per route.&lt;/p&gt;
+
+&lt;p&gt;In here I will use a simulation to show how these two problems can be solved (it is just a solution, not a panacea, though). Unlike simulated data, the algorithms themselves are pretty real though and are in constant use.&lt;/p&gt;
+
+&lt;p&gt;I will also try to introduce some graph theory concepts essential for understanding. Not too much, though, because I don’t know too much about them. Finally, I will try to design some simple test cases, cases which are easy to visualise and understand.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-get-random-city-and-random-district&quot;&gt;1. Get Random City and Random District&lt;/h2&gt;
+
+&lt;p&gt;First, I will model a random city — some area, where you can get from any node to any node. Then, I will select a random district in the city. Importantly, it may be impossible to get to any node within the district without crossing its boarders.&lt;/p&gt;
+
+&lt;p&gt;To make it more realistic, I included both one-way and two-way streets, as well as exclude some segments completely.&lt;/p&gt;
+
+&lt;h3 id=&quot;1a-visualise-city&quot;&gt;1.A. Visualise City&lt;/h3&gt;
+
+&lt;h3 id=&quot;1b-get-city-statistics&quot;&gt;1.B. Get City Statistics&lt;/h3&gt;
+
+&lt;h2 id=&quot;2-graph-introduction&quot;&gt;2. Graph Introduction&lt;/h2&gt;
+
+&lt;p&gt;Graph is a set of dots (nodes), some of which are connected by segments (edges).&lt;/p&gt;
+
+&lt;h3 id=&quot;2a-directed-graph-vs-undirected-graph&quot;&gt;2.A. Directed Graph Vs Undirected Graph&lt;/h3&gt;
+
+&lt;p&gt;In undirected graph an edge between two nodes (a and b) indicates that each node can be reached from another node, i.e. edges (a, b) and (b, a) are equal. In directed graph any edge between two nodes has a direction, with a source node known as tail and target node known as head. In directed graph edges (a, b) and (b, a) have opposite directions and are not equal.&lt;/p&gt;
+
+&lt;h3 id=&quot;2b-strongly-connected-graph&quot;&gt;2.B. Strongly Connected Graph&lt;/h3&gt;
+
+&lt;h3 id=&quot;2c-graph-representation-in-networkx&quot;&gt;2.C. Graph Representation in NetworkX&lt;/h3&gt;
+
+&lt;p&gt;Essentially, a graph is comprised of two collections — collection of nodes (each node has a unique name, and some node attributes) and collection of edges (each edge is uniquely defined by the nodes it connects, and some edge attributes). Node attributes can be anything including node coordinates. Importantly, two nodes with identical coordinates but different names, are different nodes.&lt;/p&gt;
+
+&lt;h3 id=&quot;2d-links&quot;&gt;2.D. Links&lt;/h3&gt;
+
+&lt;h2 id=&quot;2-get-city-and-district-graphs&quot;&gt;2. Get City and District Graphs&lt;/h2&gt;
+
+&lt;h3 id=&quot;2a-visualise&quot;&gt;2.A. Visualise&lt;/h3&gt;</content><author><name>Nikita Loik</name></author><category term="chinese-postman problem" /><category term="CPP" /><category term="travelling-salesman problem" /><category term="TSP" /><category term="route inspection" /><category term="NetworkX" /><summary type="html">0. Very Brief Introduction</summary></entry><entry><title type="html">mRNA Display Results Analysis</title><link href="http://localhost:4000/blog/mrna-display-introduction/" rel="alternate" type="text/html" title="mRNA Display Results Analysis" /><published>2019-09-01T02:00:00+02:00</published><updated>2019-09-01T02:00:00+02:00</updated><id>http://localhost:4000/blog/mrna-display-introduction</id><content type="html" xml:base="http://localhost:4000/blog/mrna-display-introduction/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1359644613003553&quot;&gt;mRNA display&lt;/a&gt; is a very elegant technique which occasionally enabled the discovery of functional peptide ligands. Those discoveries have inspired a lot of optimism in drug industry and research and brought billions-worth of funding to the field. To date, however, the mechanism of this technique remains vaguely understood, which often leads to dubious experimental designs followed by biased interpretations of results.&lt;/p&gt;
+
+&lt;p&gt;Recent improvement of sequencing techniques allowed to take detailed ‘snapshots’ of mRNA-library at every cycle. Understandably, new types of data require new methods of analysis. Hear I provide a novel method of [analysis of mRNA-display results][mrna-display], based on basic graph theory and implemented in &lt;a href=&quot;https://www.python.org/&quot;&gt;python&lt;/a&gt; using &lt;a href=&quot;https://networkx.github.io/&quot;&gt;NetworkX&lt;/a&gt; library.&lt;/p&gt;
+
+&lt;p&gt;For experimental data I rely on a successful &lt;a href=&quot;https://github.com/nikita-loik/mrna-display/tree/master/sample_input&quot;&gt;mRNA display&lt;/a&gt;, against biotin-tagged human recombinant PHD2, I performed according to the previously published &lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201108118&quot;&gt;protocol&lt;/a&gt; with minor modifications. Regrettably so, the results of this research are yet to see the light.&lt;/p&gt;
+
+&lt;h2 id=&quot;mrna-display-background&quot;&gt;mRNA-Display Background&lt;/h2&gt;
+
+&lt;h3 id=&quot;bio-chemistry&quot;&gt;Bio-Chemistry&lt;/h3&gt;
+
+&lt;p&gt;mRNA display is based on the ‘survival of the fittest’ algorithm. Beginning with a highly diverse collection of structurally different ligands:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ligands are mixed with a target, and some bind to the target&lt;/li&gt;
+  &lt;li&gt;poorly binding ligands are washed away&lt;/li&gt;
+  &lt;li&gt;ligands which bound well are amplified&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The process is repeated several times. In the result some ligands may be amplified to a much higher level than the other, and such ligands are considered to have a better binding properties.&lt;/p&gt;
+
+&lt;p&gt;Indeed, as a result of successful mRNA display it may be possible to find some ligands which bind well to the target. Nevertheless, such simplistic approach fails to explain, why in some cases after multiple cycles of mRNA display the most amplified ligand has weaker binding properties than some much less amplified ligands.&lt;/p&gt;
+
+&lt;h3 id=&quot;bayesian-approach&quot;&gt;Bayesian Approach&lt;/h3&gt;
+
+&lt;h4 id=&quot;priors&quot;&gt;Priors&lt;/h4&gt;
+
+&lt;h5 id=&quot;selection-library&quot;&gt;Selection Library&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;random peptide region was 8-12 amino-acids long&lt;/li&gt;
+  &lt;li&gt;for peptide-encoding region NNK library was used (where N = A/C/G/T; and K = G/T, total 32 codons)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus, the original library diversity is between 10^12 to 10^18 (~1 pmol to ~1 µmol).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;original library amount&lt;/li&gt;
+  &lt;li&gt;the library was amplified using 5 cycles of PCR (i.e. )&lt;/li&gt;
+  &lt;li&gt;library amount used for selection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;selection-process&quot;&gt;Selection Process&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;target amount ~10^-6 M&lt;/li&gt;
+  &lt;li&gt;ligand concentration ~10-6 M&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;likelyhood&quot;&gt;Likelyhood&lt;/h4&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;http://localhost:4000/assets/images/mrna_display_results_by_cycle.png&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption&gt;a result of successful mRNA display&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- [mrna-display-results-by-cycle]: /assets/images/mrna_display_results_by_cycle.png --&gt;</content><author><name>Nikita Loik</name></author><category term="mRNA display" /><category term="drug discovery" /><category term="graph theory" /><category term="python" /><category term="NetworkX" /><summary type="html">Introduction</summary></entry></feed>

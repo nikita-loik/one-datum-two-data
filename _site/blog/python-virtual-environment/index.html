@@ -1,0 +1,582 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.6 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Create Python Virtual Environment Using Shell Script and Makefile - One Datum — Two Data</title>
+<meta name="description" content="While very effective as a tool, it can be fairly laborious to create python virtual environment for every project on every computer.">
+
+
+  <meta name="author" content="Nikita Loik">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="One Datum — Two Data">
+<meta property="og:title" content="Create Python Virtual Environment Using Shell Script and Makefile">
+<meta property="og:url" content="http://localhost:4000/blog/python-virtual-environment/">
+
+
+  <meta property="og:description" content="While very effective as a tool, it can be fairly laborious to create python virtual environment for every project on every computer.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-07T01:00:00+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/blog/python-virtual-environment/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Nikita Loik",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="One Datum — Two Data Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          One Datum — Two Data
+          <span class="site-subtitle">in statu nascendi</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Nikita Loik</h3>
+    
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/nikita-loik" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Create Python Virtual Environment Using Shell Script and Makefile">
+    <meta itemprop="description" content="While very effective as a tool, it can be fairly laborious to create python virtual environment for every project on every computer.">
+    <meta itemprop="datePublished" content="February 07, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Create Python Virtual Environment Using Shell Script and Makefile
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-th-list"></i> Table of Contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#shell-script">Shell Script</a></li>
+  <li><a href="#makefile">Makefile</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>While very effective as a tool, it can be fairly laborious to create <a href="https://docs.python-guide.org/dev/virtualenvs/">python virtual environment</a> for every project on every computer.</p>
+
+<p>To simplify this tedious task a simple shell script combined with <a href="https://www.gnu.org/software/make/manual/make.html">makefile</a> can be used.</p>
+
+<h2 id="shell-script">Shell Script</h2>
+
+<p>Create a shell script <code class="highlighter-rouge">SCRIPT_PATH</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/zsh</span>
+<span class="c"># 1. Get virtual environment name.</span>
+<span class="c"># 1.1. Get working directory name (without full path).</span>
+<span class="nv">dir_name</span><span class="o">=</span><span class="k">${</span><span class="nv">PWD</span><span class="p">##*/</span><span class="k">}</span>
+<span class="c"># 1.2. Replace '-' with '_' in a name.</span>
+<span class="nv">venv_stem</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">dir_name</span><span class="p">//-/_</span><span class="k">}</span><span class="s2">"</span>
+<span class="c"># 1.3. Get virtual environment name.</span>
+<span class="nv">venv_name</span><span class="o">=</span><span class="s2">"venv_</span><span class="k">${</span><span class="nv">venv_stem</span><span class="k">}</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"===creating virtual environment </span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2">==="</span>
+
+<span class="c"># 2. Create virtual environment.</span>
+virtualenv <span class="nt">-p</span> python3 <span class="s2">".</span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># 3. Activate virtual environment.</span>
+<span class="nb">source</span> <span class="s2">".</span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2">/bin/activate"</span>
+
+<span class="c"># 4. Install jupyter.</span>
+pip install jupyter
+
+<span class="c"># 5. Install IPython kernel.</span>
+python <span class="nt">-m</span> ipykernel install <span class="nt">--user</span> <span class="nt">--name</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># 6. Install requirements.</span>
+<span class="c"># 6.1. Make an empty file requirements.txt if doesn't exist.</span>
+touch requirements.txt
+<span class="c"># 6.2. Install requirements.</span>
+pip install <span class="nt">-r</span> requirements.txt
+<span class="nb">echo</span> <span class="s2">"===virtual environment .</span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2"> created==="</span>
+
+<span class="c"># 7. If doesn't exist, add virtual environment path to .gitignore.</span>
+<span class="nb">grep</span> <span class="nt">-qxF</span> <span class="s2">".</span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2">/"</span> .gitignore <span class="o">||</span> <span class="nb">echo</span> <span class="s2">".</span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2">/"</span> <span class="o">&gt;&gt;</span> .gitignore
+<span class="nb">echo</span> <span class="s2">"===updated .gitignore with "</span>.<span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span>/<span class="s2">"==="</span>
+
+<span class="c"># 8. Add and commit .gitignore to git.</span>
+<span class="c"># NB Will report 'no changes added to commit' if .gitignore stayed the same.</span>
+git add .gitignore
+git commit <span class="nt">-m</span> <span class="s2">"Update .gitignore with '.</span><span class="k">${</span><span class="nv">venv_name</span><span class="k">}</span><span class="s2">/'"</span>
+<span class="nb">echo</span> <span class="s2">"===added &amp; committed .gitignore to git==="</span>
+</code></pre></div></div>
+
+<p><strong>NB!</strong> To make script executable, it may be necessary to change the <a href="https://catcode.com/teachmod/">mode of the file</a>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 777 SCRIPT_PATH
+</code></pre></div></div>
+
+<h2 id="makefile">Makefile</h2>
+
+<div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Virtual environment.
+# 1. Get virtual environment name.
+</span><span class="nv">VENV_NAME</span> <span class="o">:=</span> <span class="err">$</span><span class="o">(</span>wildcard .venv_<span class="k">*</span><span class="o">)</span>
+<span class="c"># 2. Get kernel name from virtual-environment name (substitute '.' for '').
+</span><span class="nv">KERNEL_NAME</span> <span class="o">:=</span> <span class="err">$</span><span class="o">(</span>subst .,,<span class="nv">$(VENV_NAME)</span><span class="o">)</span>
+<span class="nl">venv_get</span><span class="o">:</span>
+    <span class="err">SCRIPT_PATH</span>
+
+<span class="nl">venv_remove</span><span class="o">:</span>
+    <span class="err">@echo</span> <span class="s2">"===removing virtual environment==="</span>
+    <span class="err">rm</span> <span class="err">-rf</span> <span class="err">$(VENV_NAME)</span>
+    <span class="err">@echo</span> <span class="s2">"===removing virtual iPython kernel==="</span>
+    <span class="err">rm</span> <span class="err">-rf</span> <span class="err">~/Library/Jupyter/kernels/$(KERNEL_NAME)</span>
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#makefile" class="page__taxonomy-item" rel="tag">makefile</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">python</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#shell-script" class="page__taxonomy-item" rel="tag">shell script</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#virtual-environment" class="page__taxonomy-item" rel="tag">virtual environment</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-07T01:00:00+01:00">February 07, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Create+Python+Virtual+Environment+Using+Shell+Script+and+Makefile%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fpython-virtual-environment%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fpython-virtual-environment%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fpython-virtual-environment%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/route-inspection/" class="pagination--pager" title="Route Inspection
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/route-inspection/" rel="permalink">Route Inspection
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">0. Very Brief Introduction
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/mrna-display-introduction/" rel="permalink">mRNA Display Results Analysis
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Introduction
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/nikita-loik" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Nikita Loik. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
