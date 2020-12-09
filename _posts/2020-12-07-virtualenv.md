@@ -1,6 +1,6 @@
 ---
-title: "Create Python Virtual Environment Using Shell Script and Makefile"
-date: 2020-02-07T00:00:00-00:00
+title: "VIRTUALENV"
+date: 2020-12-07T00:00:00-00:00
 categories:
   - blog
 toc: true
@@ -14,90 +14,45 @@ tags:
 ---
 
 ## Prerequisits
-Set-up macOS and install `pyenv` as described in [ACT ONE](https://nikita-loik.github.io/one-datum-two-data/blog/pip-my-env).
+Set-up macOS and install `pyenv` as described in [PIP my Env](https://nikita-loik.github.io/one-datum-two-data/blog/pip-my-env).
 Set global version of python using `pyenv`.
+```sh
+pyenv global #.#.#
+```
 
-## Virtualenv Installation
+## Virtualenv Installation & Use
 ```shell
 pip install virtualenv
 virtualenv --version
 ```
+Examples of the scripts and the Makefile are provided in [dummy/virtualenv_test](https://github.com/nikita-loik/dummy/tree/main/virtualenv_test).
 
-## Shell Script
-
-Create a shell script `SCRIPT_PATH`.
-
-```shell
-# CREATE AND ACTIVATE VIRTUAL ENVIRONMENT =============================
-# 1. Get working directory name (without full path).
-dir_name=${PWD##*/}
-
-# 2. Replace '-' with '_' in a name.
-venv_stem="${dir_name//-/_}"
-
-# 3. Get virtual environment name.
-venv_name="venv_${venv_stem}"
-echo "===creating virtual environment ${venv_name}==="
-
-# 4. Create virtual environment.
-virtualenv -p python3 ".${venv_name}"
-
-# 5. Activate virtual environment.
-source ".${venv_name}/bin/activate"
-
-# 6. Upgrade pip.
-pip install -U pip
-
-# JUPYTER =============================================================
-pip install jupyter
-
-# KERNELS =============================================================
-# IPython
-python -m ipykernel install --user --name="${venv_stem}_py"
-
-# REQUIREMENTS ========================================================
-touch requirements.txt
-pip install -r requirements.txt
-echo "===virtual environment .${venv_name} created==="
-
-# GIT =================================================================
-# NB! To avoid cluttering .gitignore, add ignore statement to ./.git/info/exclude.
-# 8. If doesn't exist, add virtual environment path to ./.git/info/exclude.
-grep -qxF ".${venv_name}/" ../.git/info/exclude || echo ".${venv_name}/" >> ./.git/info/exclude
-echo "===updated ./.git/info/exclude. with ".${venv_name}/"==="
-```
+|file|function|
+|:-:|:-:|
+|[get_virtualenv.sh](https://github.com/nikita-loik/dummy/blob/main/virtualenv_test/get_virtualenv.sh)|creates python virtual environment using virtualenv|
+|[remove_virtualenv.sh](https://github.com/nikita-loik/dummy/blob/main/virtualenv_test/remove_virtualenv.sh)|removes python virtual environment using virtualenv|
+|[Makefile](https://github.com/nikita-loik/dummy/blob/main/virtualenv_test/Makefile)|contains make commands to run the corresponding shell scripts|
+|[test.py](https://github.com/nikita-loik/dummy/blob/main/virtualenv_test/test.py)|imports installed libraries, and reports whether the imports were successful|
 
 **NB!** To make script executable, it may be necessary to change the [mode of the file][chmod-tutorial]:
 
-```shell
+```sh
 chmod +x SCRIPT_PATH
 ```
 
-## Makefile
-
-```makefile
-# 1 GET NAMES =========================================================
-
-# 1.1 Get virtual-environment name.
-VENV_NAME := $(wildcard .venv_*)
-
-# 1.2 Get virtual-environment stem.
-VENV_STEM := $(subst .venv_,,$(VENV_NAME))
-
-# 1.3 Get kernel names from virtual-environment stem.
-KERNEL_NAME_PY = "$(VENV_STEM)_py"
-
-# =====================================================================
-
-venv_get:
-	get_virtualenv.sh
-
-venv_remove:
-	@echo "===removing virtual environment==="
-	rm -rf $(VENV_NAME)
-
-	@echo "===removing virtual iPython kernel==="
-	rm -rf ~/Library/Jupyter/kernels/$(KERNEL_NAME_PY)
+To install virtual environment, run:
+```sh
+make venv_get
+```
+To test the installation was successful, run:
+```sh
+source .venv_virtualenv_test/bin/activate
+python test.py
+deactivate
+```
+To remove virtual environment, run:
+```sh
+make venv_remove
 ```
 
 ## Manage Requirements
