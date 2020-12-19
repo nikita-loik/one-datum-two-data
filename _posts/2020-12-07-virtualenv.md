@@ -1,15 +1,16 @@
 ---
-title: "VIRTUALENV"
+title: "virtualenv"
 date: 2020-12-07T00:00:00-00:00
 categories:
   - blog
 toc: true
-toc_label: "Table of Contents"
+toc_label: "ToC"
 toc_icon: "th-list"
 tags:
-  - shell script
-  - virtual environment
+  - virtualenv
   - python
+  - virtual environment
+  - shell script
   - makefile
 ---
 
@@ -37,7 +38,7 @@ Examples of the scripts and the Makefile are provided in [dummy/virtualenv_test]
 **NB!** To make script executable, it may be necessary to change the [mode of the file][chmod-tutorial]:
 
 ```sh
-chmod +x SCRIPT_PATH
+chmod +x get_virtualenv.sh
 ```
 
 To install virtual environment, run:
