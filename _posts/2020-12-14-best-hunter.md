@@ -26,7 +26,7 @@ When looking for a right company, you would like to cut through the thick fleshy
 
 Lamentably, the tech stack found in job descriptions is often obscure as hell. It can be anything from extremely generic ('data scientist with good knowledge in any programming language'), to highly specific ('data scientist with a proven track record of model simplification'), to completely grotesque ('data scientist with wealth of experience in data visualisation and kubernetes').
 
-In addition from the outside the absolute majority of companies look exactly the same. They offer the flat hierarchy (what ever this oxymoronic misnomer might mean), the pay above average (which turn the concept of average into some escheresque paradox), an awesome office location, and a fruit basket (a cookie jar, an ergonomic chair, assortment of fizzy drinks).
+In addition from the outside the absolute majority of companies look exactly the same. They offer the flat hierarchy (what ever this oxymoronic misnomer might mean), they pay above average (which turn the concept of average into some escheresque paradox), an awesome office location, and a fruit basket (a cookie jar, an ergonomic chair, assortment of fizzy drinks).
 
 
 
