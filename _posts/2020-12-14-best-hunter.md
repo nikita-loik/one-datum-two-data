@@ -49,7 +49,7 @@ Brilliant headhunters add a personal touch to the game:
 * when you move to another country
 * when you want to change the company
 
-Only 4 out of 83 (less than 5%) made the cut. Here are the details of those applied all their skill to the game and  who agreed to share their data.
+Only 4 headhunters (less than 5%) made the cut. Here are the details of those who applied all their skills to the game and who agreed to share their data.
 
 |hunter|hunter's game|hunting ground|
 |:--|:--|:--|
