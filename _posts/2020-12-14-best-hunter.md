@@ -1,5 +1,5 @@
 ---
-title: "'hunting with the hounds running with the hair' or what makes a good headhunter"
+title: "'hunting with the hounds & running with the hair' or what makes a good headhunter"
 date: 2020-12-14T00:00:00-00:00
 categories:
   - blog
