@@ -1,5 +1,5 @@
 ---
-title: "'to hunt with the hounds one has to run with the hair' or what makes a good headhunter"
+title: "'hunting with the hounds running with the hair' or what makes a good headhunter"
 date: 2020-12-14T00:00:00-00:00
 categories:
   - blog
@@ -14,7 +14,7 @@ tags:
 
 Looking for a new job is a full-time, unpaid, often exhausting, and sometimes humiliating job of its own. Occasionally, one may be in some luck to be hunted by a skillful headhunter, who does not treat an applicant as game, but instead turns the process into a rewarding game, no matter the outcome. In the last two years I have been in touch with over 83 headhunters (83 are only the ones I managed to keep the records of).
 
-Overtime, certain criteria on which to judge whether the headhunter is not too old to hunt precipitate out. Good headhunters just make the game crystal-clear to you and provied the following information up front:
+Overtime, certain criteria on which to judge whether the headhunter is not too old to hunt precipitate out. Good headhunters just make the game crystal-clear to you and provided the following information up front:
 1. the salary & the job(s) including:
 * responsibilities & requirements
 * product
@@ -26,8 +26,9 @@ Overtime, certain criteria on which to judge whether the headhunter is not too o
 
 3. clear detailed feedback on every part of the interview (whether successful or not).
 
-Regrettably, I failed to respond when approached by 4 headhunters (5%). At the same time there were 15 headhunters (18%) who never came back to me after my responding to their original advances and sending them my CV — those were duly deleted from my network. 22 (27%) headhunters failed to provide any information on the job. 25 (30%) only provided the job description and requirements; something that can be found through on-line job portals — not quite clear what these people really contribute to the process. 1 person was particularly hideous and was trying to get from me personal contact details of my colleague — which is a no go.
-Only 17 (20%) provided detailed information about both the job and the salary.
+Particularly weird specimens included:
+* one who tried to get from me personal contact details of my colleague — this is just a no go,
+* another who wanted me to fill in some endless forms on the website of the prospective employer — honestly if one wants to fill in the forms on their own they are already doing it.
 
 <figure class="align-center">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/headhunters_statistics.png" alt="">
@@ -44,8 +45,10 @@ Brilliant headhunters add a personal touch to the game:
 * when you move to another country
 * when you want to change the company
 
-Only ... out of 83 (less than 5%) turned out to fall into this category.
+Only 4 out of 83 (less than 5%) turned out to fall into this category. Here are the details of those, worth adding to your LinkedIn network.
 
-|hunter|hunting ground|
-|:--|:--|
-|[Mirela Tocco](https://www.linkedin.com/in/mirela-tocco/)|IT & Data Science; product & marketing|
+|hunter|hunter's game|hunting ground|
+|:--|:--|:--|
+|[Mirela Tocco](https://www.linkedin.com/in/mirela-tocco/)|IT & Data Science; product & marketing|worldwide, but mostly Europe|
+|[Rex Rusling](https://www.linkedin.com/in/rexrusling/)|software engineers, data professionals|worldwide, but mostly Europe|
+|[Andrey Sydorenko](https://www.linkedin.com/in/andreyrec/)|data professionals|worldwide, but mostly Europe|
