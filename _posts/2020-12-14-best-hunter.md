@@ -14,7 +14,8 @@ tags:
 
 Looking for a new job is a full-time, unpaid, often exhausting, and sometimes humiliating job of its own. Occasionally, one may be in some luck to be hunted by a skillful headhunter, who does not treat an applicant as game, but instead turns the process into a rewarding game, no matter the outcome. In the last two years I have been in touch with over 83 headhunters (83 are only the ones I managed to keep the records of).
 
-Overtime, certain criteria on which to judge whether the headhunter is not too old to hunt precipitate out. Good headhunters just make the game crystal-clear to you and provided the following information up front:
+Overtime, the criteria on which to judge whether the headhunter is not too old to hunt emerge. The good headhunters just make the game crystal-clear to you and provided relevant information up front:
+
 1. the salary & the job(s) including:
 * responsibilities & requirements
 * product
@@ -26,14 +27,17 @@ Overtime, certain criteria on which to judge whether the headhunter is not too o
 
 3. clear detailed feedback on every part of the interview (whether successful or not).
 
-Particularly weird specimens included:
-* one who tried to get from me personal contact details of my colleague — this is just a no go,
-* another who wanted me to fill in some endless forms on the website of the prospective employer — honestly if one wants to fill in the forms on their own they are already doing it.
+In my experience those good ones are few and far between.
 
 <figure class="align-center">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/headhunters_statistics.png" alt="">
   <figcaption>Communication with headhunters.</figcaption>
 </figure>
+
+About 75% of the headhunters do not make your life easier in any way — they are those crazy ones going around banging some drums, and blowing the horns. With all the noise around, your heart-beat sky rockets, you run like crazy triggered by the noise without clear image of where you are going at all.
+Particularly weird specimens included:
+* one who tried to get from me personal contact details of my colleague — this is just a no go,
+* another who wanted me to fill in some endless forms on the website of the prospective employer — honestly if one wants to fill in the forms on their own they are already doing it.
 
 Brilliant headhunters add a personal touch to the game:
 1. they can negotiate an interview process for you
@@ -45,7 +49,7 @@ Brilliant headhunters add a personal touch to the game:
 * when you move to another country
 * when you want to change the company
 
-Only 4 out of 83 (less than 5%) turned out to fall into this category. Here are the details of those, worth adding to your LinkedIn network.
+Only 4 out of 83 (less than 5%) made the cut. Here are the details of those applied all their skill to the game and  who agreed to share their data.
 
 |hunter|hunter's game|hunting ground|
 |:--|:--|:--|
