@@ -1,5 +1,5 @@
 ---
-title: "'hunting with the hounds & running with the hair' or what makes a good headhunter"
+title: "'running with the hare & hunting with the hounds' or what makes a good headhunter"
 date: 2020-12-14T00:00:00-00:00
 categories:
   - blog
@@ -12,9 +12,11 @@ tags:
   - jobsearch
 ---
 
-Looking for a new job is a full-time, unpaid, often exhausting, and sometimes humiliating job of its own. Occasionally, one may be in some luck to be hunted by a skillful headhunter, who does not treat an applicant as game, but instead turns the process into a rewarding game, no matter the outcome. In the last two years I have been in touch with over 83 headhunters (83 are only the ones I managed to keep the records of).
+Looking for a new job is a full-time, unpaid, often exhausting, and sometimes humiliating job of its own. Occasionally, one may be in some luck to be hunted by a skillful headhunter, who does not treat an applicant as game, but instead turns the process itself into a rewarding game, no matter the outcome.
 
-Overtime, the criteria on which to judge whether the headhunter is not too old to hunt emerge. The good headhunters just make the game crystal-clear to you and provided relevant information up front:
+In the last two years I have been in touch with over 83 headhunters (83 are only the ones I managed to keep the records of). In all cases I was contacted by the headhunter via LinkedIn.
+
+Over time, the criteria on which to judge whether the headhunter is fit fot the game emerge. **The good headhunters** just make the game crystal-clear to you and **provide relevant information up front in succinct form**:
 
 1. the salary & the job(s) including:
 * responsibilities & requirements
@@ -27,19 +29,19 @@ Overtime, the criteria on which to judge whether the headhunter is not too old t
 
 3. clear detailed feedback on every part of the interview (whether successful or not).
 
-In my experience those good ones are few and far between.
-
-<figure class="align-center">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/headhunters_statistics.png" alt="">
-  <figcaption>Communication with headhunters.</figcaption>
-</figure>
+In my experience those good ones are few and far between (about 20%). Absolute majority will give you some long-winded blabber, telling you how cool some mystery company (they call no names) is, and how you should stand in awe before this opportunity.
 
 About 75% of the headhunters do not make your life easier in any way — they are those crazy ones going around banging some drums, and blowing the horns. With all the noise around, your heart-beat sky rockets, you run like crazy triggered by the noise without clear image of where you are going at all.
 Particularly weird specimens included:
 * one who tried to get from me personal contact details of my colleague — this is just a no go,
 * another who wanted me to fill in some endless forms on the website of the prospective employer — honestly if one wants to fill in the forms on their own they are already doing it.
 
-Brilliant headhunters add a personal touch to the game:
+<figure class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/headhunters_statistics.png" alt="">
+  <figcaption>Communication with headhunters over 2-years time, based on personal data from 01.01.2019 to 31.12.2020.</figcaption>
+</figure>
+
+**Brilliant headhunters** are even more difficult to find. They **add a personal touch to the game**:
 1. they can negotiate an interview process for you
 * order of the interviews (*e.g.* to have tech-task after personal interviews, so that you don't waste time doing the task when you already lost points in the most-charming-smile contest)
 * tech-task content (*e.g.* sometimes they can negotiate you out of spending hours or even days on a tech-task by substituting it with code-along discussion or reviewing of your open-source projects)
@@ -48,11 +50,12 @@ Brilliant headhunters add a personal touch to the game:
 * when your company goes bust
 * when you move to another country
 * when you want to change the company
+4. they tell you about the current state of the market
 
-Only 4 headhunters (less than 5%) made the cut. Here are the details of those who applied all their skills to the game and who agreed to share their data.
+Only 4 headhunters (less than 5%) made the cut, and I am very grateful to them for providing me with wealth of useful information and supporting me throughout the process. Here are the details of the 3 who agreed to share their contact information.
 
 |hunter|hunter's game|hunting ground|
 |:--|:--|:--|
 |[Mirela Tocco](https://www.linkedin.com/in/mirela-tocco/)|IT & Data Science; product & marketing|worldwide, but mostly Europe|
-|[Rex Rusling](https://www.linkedin.com/in/rexrusling/)|software engineers, data professionals|worldwide, but mostly Europe|
+|[Rex Rusling](https://www.linkedin.com/in/rexrusling/)|software engineers, data professionals|worldwide, with strong focus on Berlin|
 |[Andrey Sydorenko](https://www.linkedin.com/in/andreyrec/)|data professionals|worldwide, but mostly Europe|
