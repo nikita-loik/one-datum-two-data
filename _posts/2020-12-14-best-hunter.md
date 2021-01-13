@@ -57,5 +57,5 @@ Only 4 headhunters (less than 5%) made the cut, and I am very grateful to them f
 |hunter|hunter's game|hunting ground|
 |:--|:--|:--|
 |[Mirela Tocco](https://www.linkedin.com/in/mirela-tocco/)|IT & Data Science; product & marketing|worldwide, but mostly Europe|
-|[Rex Rusling](https://www.linkedin.com/in/rexrusling/)|software engineers, data professionals|worldwide, with strong focus on Berlin|
-|[Andrey Sydorenko](https://www.linkedin.com/in/andreyrec/)|data professionals|worldwide, but mostly Europe|
+|[Rex Rusling](https://www.linkedin.com/in/rexrusling/)|software engineers & data professionals|worldwide, with strong focus on Berlin|
+|[Andrey Sydorenko](https://www.linkedin.com/in/andreyrec/)|Data Science|strong focus on Berlin, but also London & Amsterdam|
