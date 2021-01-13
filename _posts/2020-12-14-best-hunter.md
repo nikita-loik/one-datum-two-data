@@ -12,9 +12,9 @@ tags:
   - jobsearch
 ---
 
-Looking for a new job is a full-time, unpaid, often exhausting, and sometimes humiliating job of its own. Occasionally, one may be in some luck to be hunted by a skillful headhunter, who does not treat an applicant as game, but instead turns the process itself into a rewarding game, no matter the outcome.
+Looking for a new job is a full-time, unpaid, often exhausting, and sometimes humiliating job of its own. Occasionally, one may be in some luck to be hunted by a skillful headhunter, who does not treat an applicant as game, but instead turns the process itself into a rewarding game — no matter the outcome.
 
-In the last two years I have been in touch with over 83 headhunters (83 are only the ones I managed to keep the records of). In all cases I was contacted by the headhunter via LinkedIn.
+In the last two years I have been in touch with over 83 headhunters (83 are only the ones I managed to keep the records of). In all cases I was approached by the headhunter via LinkedIn.
 
 Over time, the criteria on which to judge whether the headhunter is fit fot the game emerge. **The good headhunters** just make the game crystal-clear to you and **provide relevant information up front in succinct form**:
 
@@ -29,7 +29,7 @@ Over time, the criteria on which to judge whether the headhunter is fit fot the 
 
 3. clear detailed feedback on every part of the interview (whether successful or not).
 
-In my experience those good ones are few and far between (about 20%). Absolute majority will give you some long-winded blabber, telling you how cool some mystery company (they call no names) is, and how you should stand in awe before this opportunity.
+In my experience the good ones are few and far between (about 20%). Absolute majority will give you some long-winded blabber, telling you how cool some mystery company (they don't even name the company) is, and how you should stand in awe before this opportunity.
 
 About 75% of the headhunters do not make your life easier in any way — they are those crazy ones going around banging some drums, and blowing the horns. With all the noise around, your heart-beat sky rockets, you run like crazy triggered by the noise without clear image of where you are going at all.
 Particularly weird specimens included:
@@ -45,14 +45,14 @@ Particularly weird specimens included:
 1. they can negotiate an interview process for you
 * order of the interviews (*e.g.* to have tech-task after personal interviews, so that you don't waste time doing the task when you already lost points in the most-charming-smile contest)
 * tech-task content (*e.g.* sometimes they can negotiate you out of spending hours or even days on a tech-task by substituting it with code-along discussion or reviewing of your open-source projects)
-2. they can communicate back to the company your issues with tech-tasks (sometimes those are shitty by design), or your decision not to move forward with the application
+2. they can communicate back to the company your issues with tech-tasks (sometimes tech-tasks are shitty by design), or your decision not to move forward with the application
 3. they offer a life-long support
 * when your company goes bust
 * when you move to another country
 * when you want to change the company
 4. they tell you about the current state of the market
 
-Only 4 headhunters (less than 5%) made the cut, and I am very grateful to them for providing me with wealth of useful information and supporting me throughout the process. Here are the details of the 3 who agreed to share their contact information.
+Only 4 headhunters (less than 5%) made the cut, and I am very grateful to them for providing me with wealth of useful information the current state of the market and supporting me throughout the process. Here are the details of the 3 who agreed to share their contact information.
 
 |hunter|hunter's game|hunting ground|
 |:--|:--|:--|
