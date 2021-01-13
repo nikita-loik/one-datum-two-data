@@ -1,6 +1,6 @@
 ---
 title: "'running with the hare & hunting with the hounds' or what makes a good headhunter"
-date: 2020-12-14T00:00:00-00:00
+date: 2021-01-13T00:00:00-00:00
 categories:
   - blog
 # toc: true
